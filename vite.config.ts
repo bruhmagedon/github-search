@@ -10,11 +10,11 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), svgrPlugin(), tsconfigPaths()],
     build: {
       outDir: 'dist',
-      sourcemap: mode !== 'production', // Включаем sourcemap только для dev/stage окружений
-      chunkSizeWarningLimit: 1500, // Строгий лимит для снижения размера chunk
+      sourcemap: mode !== 'production', 
+      chunkSizeWarningLimit: 1500,
     },
     optimizeDeps: {
-      include: ['react', 'react-dom'], // Предварительная загрузка критически важных библиотек
+      include: ['react', 'react-dom'], 
     },
     server: {
       port: 3000,
@@ -35,4 +35,4 @@ export default defineConfig(({ mode }) => {
       },
     },
   }
-}) // TODO: add lint-stage
+}) 
