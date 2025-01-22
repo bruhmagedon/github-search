@@ -1,5 +1,6 @@
 import antfu from '@antfu/eslint-config';
 import format from 'eslint-plugin-format';
+import storybook from 'eslint-plugin-storybook';
 
 export default antfu(
   {
@@ -12,6 +13,7 @@ export default antfu(
     }
   },
   {
+    // Переопределение дефолтных правил antfu-конфига
     name: 'rewrite',
     rules: {
       'antfu/curly': 'off',
@@ -23,6 +25,7 @@ export default antfu(
     }
   },
   {
+    // Форматтер CSS
     name: 'formatter',
     rules: {
       'style/arrow-parens': ['error', 'always'],
@@ -49,6 +52,7 @@ export default antfu(
     }
   },
   {
+    // Форматтер CSS
     files: ['**/*.css'],
     languageOptions: {
       parser: format.parserPlain
@@ -63,13 +67,7 @@ export default antfu(
   {
     name: 'sort',
     rules: {
-      'perfectionist/sort-array-includes': [
-        'error',
-        {
-          order: 'asc',
-          type: 'alphabetical'
-        }
-      ],
+      // Сортировка импортов
       'perfectionist/sort-imports': [
         'error',
         {
@@ -91,6 +89,7 @@ export default antfu(
           type: 'natural'
         }
       ],
+      // Сортировка полей интерфейсов
       'perfectionist/sort-interfaces': [
         'error',
         {
@@ -99,6 +98,7 @@ export default antfu(
           type: 'alphabetical'
         }
       ],
+      // Сортировка пропсов JSX
       'perfectionist/sort-jsx-props': [
         'error',
         {
@@ -111,6 +111,7 @@ export default antfu(
           type: 'alphabetical'
         }
       ],
+      // Сортировка типов внутри объединенний и пересечений
       'perfectionist/sort-union-types': [
         'error',
         {
@@ -134,5 +135,16 @@ export default antfu(
         }
       ]
     }
+  },
+  {
+    // Правила для сторибука
+    ignores: ['!.storybook']
+  },
+  {
+    name: 'siberiacancode/jsx-a11y',
+    plugins: {
+      'storybook': storybook
+    },
+    ...storybook.configs['flat/recommended']
   }
 );
