@@ -1,6 +1,5 @@
 import antfu from '@antfu/eslint-config';
 import format from 'eslint-plugin-format';
-import storybook from 'eslint-plugin-storybook';
 
 export default antfu(
   {
@@ -139,12 +138,5 @@ export default antfu(
   {
     // Правила для сторибука
     ignores: ['!.storybook']
-  },
-  {
-    name: 'siberiacancode/jsx-a11y',
-    plugins: {
-      'storybook': storybook
-    },
-    ...storybook.configs['flat/recommended']
   }
 );
