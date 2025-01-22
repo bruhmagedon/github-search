@@ -7,8 +7,6 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --fix",
-    "format": "prettier --write .",
-    "pretty": "npm run format && npm run lint",
     "lint-inspector": "npx @eslint/config-inspector",
     "preview": "vite preview"
   },
