@@ -1,0 +1,143 @@
+@use 'sass:math';
+@use 'functions' as *;
+
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: fluid($max, $min);
+}
+
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin abs-x {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+}
+
+@mixin abs-y {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin list-reset() {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Сбрасывает и отступы, и поля до 0.
+@mixin margin-padding-reset() {
+  padding: 0;
+  margin: 0;
+}
+
+// Убирает стандартные стили кнопки для последующей кастомизации.
+@mixin button-reset() {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+// Применяет пользовательские стили для полосы прокрутки.
+@mixin scrollbar() {
+  scrollbar-width: thin;
+  scrollbar-color: #e4e5e8;
+
+  &::-webkit-scrollbar {
+    width: rem(3);
+    height: rem(3);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #e4e5e8;
+  }
+}
+
+// Создает гибкую раскладку с настраиваемым направлением, выравниванием и распределением.
+@mixin flexbox($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Настраивает внешний вид и размеры пользовательской полосы прокрутки.
+@mixin scrollBar($color-track, $color-thumb, $width: rem(10), $height: rem(10)) {
+  // firefox
+  scrollbar-width: thin; /* "auto" или "thin"  */
+  scrollbar-color: $color-track $color-thumb;
+
+  &::-webkit-scrollbar {
+    width: $width; /* ширина scrollbar */
+    height: $height;
+  }
+  &::-webkit-scrollbar-track {
+    background: $color-track; /* цвет дорожки */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-thumb; /* цвет плашки */
+    border: 0 solid #fff; /* padding вокруг плашки */
+  }
+}
+
+// Применяет стили для экранов, размер которых меньше указанной ширины.
+@mixin mediaMax($mediaWidth) {
+  @media only screen and (max-width: ($mediaWidth - 1)) {
+    @content;
+  }
+}
+
+// Применяет стили для экранов, размер которых больше указанной ширины.
+@mixin mediaMin($mediaWidth) {
+  @media only screen and (min-width: $mediaWidth) {
+    @content;
+  }
+}
+
+// Применяет стили для экранов в указанном диапазоне размеров.
+@mixin mediaDistance($mediaWidthMin, $mediaWidthMax) {
+  @media only screen and (min-width: $mediaWidthMin) and (max-width: ($mediaWidthMax - 1)) {
+    @content;
+  }
+}
+
+// Добавляет эффект загрузки с переливающимся фоном и настраиваемой длительностью и цветами.
+@mixin isLoading($duration: 0s, $bgc: #dedede, $gradientFirst: #f1f1f1, $gradientSecond: #d5d5d5) {
+  background: $bgc;
+  background: linear-gradient(110deg, $gradientSecond 8%, $gradientFirst 18%, $gradientSecond 33%);
+  background-size: 200% 100%;
+  animation: 1.5s shine $duration linear infinite;
+}
