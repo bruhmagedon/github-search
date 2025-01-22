@@ -1,7 +1,11 @@
+import type { RouteObject } from 'react-router-dom';
+
 import { BaseLayout } from '@app/layouts/BaseLayout';
-import { SearchPage } from '@pages/search/SearchPage';
+import { NotFoundPage } from '@pages/index';
 import { Suspense } from 'react';
 import { createBrowserRouter, RouterProvider as ReactRouterProvider } from 'react-router-dom';
+
+import { routesConfig } from './routes.config';
 
 // TODO: Добавить ErrorBoundary
 const appRouter = createBrowserRouter([
@@ -13,19 +17,9 @@ const appRouter = createBrowserRouter([
         <div>Error</div>
       </Suspense>
     ),
-    children: [
-      { index: true, element: <SearchPage /> }
-      //   { path: 'oauth/callback/*', element: <MainPage /> },
-      //   { path: 'statistic', element: <StatisticPage /> },
-      //   { path: 'donate', element: <DonatePage /> },
-      //   { path: 'team', element: <TeamPage /> },
-      //   { path: 'privacy', element: <PrivacyPage /> },
-      //   { path: 'tos', element: <TermsPage /> },
-      //   { path: 'cookie', element: <CookiePage /> },
-      //   // TODO* пошла попизде из-за layout
-      //   { path: '*', element: <NotFoundPage /> },
-    ]
-  }
+    children: Object.values(routesConfig satisfies Record<string, RouteObject>)
+  },
+  { path: '*', element: <NotFoundPage /> }
 ]);
 
 export const RouterProvider = () => <ReactRouterProvider router={appRouter} />;
