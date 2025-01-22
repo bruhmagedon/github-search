@@ -1,5 +1,5 @@
 {
-  "name": "github-smartway",
+  "name": "github-search",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -7,33 +7,50 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --fix",
-    "format": "prettier --write .",
-    "pretty": "npm run format && npm run lint",
     "lint-inspector": "npx @eslint/config-inspector",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "axios": "^1.7.9",
+    "mobx": "^6.13.5",
+    "mobx-react": "^9.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "7.0.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.15.0",
+    "@chromatic-com/storybook": "^3.2.4",
     "@eslint-react/eslint-plugin": "^1.24.0",
+    "@storybook/addon-essentials": "^8.6.0-alpha.1",
+    "@storybook/addon-interactions": "^8.6.0-alpha.1",
+    "@storybook/addon-onboarding": "^8.6.0-alpha.1",
+    "@storybook/blocks": "^8.6.0-alpha.1",
+    "@storybook/react": "^8.6.0-alpha.1",
+    "@storybook/react-vite": "^8.6.0-alpha.1",
+    "@storybook/test": "^8.6.0-alpha.1",
     "@types/node": "^22.10.7",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "eslint": "^9.18.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.18",
+    "eslint-plugin-format": "^1.0.1",
+    "eslint-plugin-storybook": "^0.11.2",
     "globals": "^15.14.0",
-    "prettier": "^3.4.2",
+    "sass-embedded": "^1.83.4",
+    "storybook": "^8.6.0-alpha.1",
     "typescript": "~5.6.2",
     "vite": "^6.0.5",
     "vite-plugin-checker": "^0.8.0",
     "vite-plugin-svgr": "^4.3.0",
     "vite-tsconfig-paths": "^5.1.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
