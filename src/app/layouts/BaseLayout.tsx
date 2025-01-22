@@ -1,11 +1,13 @@
-import { classNames } from '@shared/utilities';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import cls from './BaseLayout.module.scss';
 
-interface BaseLayoutProps {
-  className?: string;
-}
-
-export function BaseLayout({ className }: BaseLayoutProps) {
-  return <div className={classNames(cls.BaseLayout, {}, [className])}></div>;
+export function BaseLayout() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className={cls.header}></div>
+      <Outlet />
+    </Suspense>
+  );
 }

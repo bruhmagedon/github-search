@@ -1,4 +1,5 @@
 import { BaseLayout } from '@app/layouts/BaseLayout';
+import { SearchPage } from '@pages/search/SearchPage';
 import { Suspense } from 'react';
 import { createBrowserRouter, RouterProvider as ReactRouterProvider } from 'react-router-dom';
 
@@ -13,7 +14,7 @@ const appRouter = createBrowserRouter([
       </Suspense>
     ),
     children: [
-      { index: true, element: <div /> }
+      { index: true, element: <SearchPage /> }
       //   { path: 'oauth/callback/*', element: <MainPage /> },
       //   { path: 'statistic', element: <StatisticPage /> },
       //   { path: 'donate', element: <DonatePage /> },
