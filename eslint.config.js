@@ -37,7 +37,7 @@ export default antfu(
       'style/linebreak-style': ['error', 'unix'],
       'style/max-len': [
         'error',
-        100,
+        110,
         2,
         { ignoreComments: true, ignoreStrings: true, ignoreTemplateLiterals: true }
       ],
