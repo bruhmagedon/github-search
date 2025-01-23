@@ -1,6 +1,6 @@
 import { classNames } from '@shared/utilities';
 
-import cls from './SearchPage.module.scss';
+import cls from './RepositoryDetailsPage.module.scss';
 
 const RepositoryDetailsPage = () => {
   return (
