@@ -1,0 +1,33 @@
+.input {
+  height: 100%;
+  width: 100%;
+  padding: 16px 20px;
+
+  border: none;
+
+  background: none;
+  box-shadow: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  outline: none;
+  border-radius: 0;
+
+  &Wrapper {
+    height: rem(48);
+    border-radius: rem(12);
+    background-color: var(--color-primary);
+    border: 2px solid rgba(0, 0, 0, 0);
+
+    transition: border 0.2s linear;
+
+    &:hover {
+      border-color: var(--color-border);
+    }
+    &:focus-within {
+      border-color: var(--color-blue);
+    }
+  }
+}
