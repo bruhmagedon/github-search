@@ -1,12 +1,18 @@
-import { Avatar } from '@common/ui';
+import IconArchive from '@assets/Archive.svg?react';
+import IconCreate from '@assets/Create.svg?react';
+import IconFolder from '@assets/Folder.svg?react';
+import IconFork from '@assets/Fork.svg?react';
+import IconStar from '@assets/Star.svg?react';
+import IconTerminal from '@assets/Terminal.svg?react';
+import { Avatar, CardStats } from '@common/ui';
 import { classNames } from '@common/utilities';
 
 import cls from './RepositoryDetailsPage.module.scss';
 
 const RepositoryDetailsPage = () => {
   return (
-    <article className={classNames(cls.RepositoryPage, {}, [])}>
-      <div className={classNames(cls.card, {}, [])}>
+    <div className={classNames(cls.RepositoryPage, {}, [])}>
+      <article className={classNames(cls.card, {}, [])}>
         <h1 className={classNames(cls.cardTitle, {}, [])}>
           Профиль
         </h1>
@@ -20,10 +26,15 @@ const RepositoryDetailsPage = () => {
           </div>
         </header>
         <div className={cls.cardStats}>
-          Карточка
+          <CardStats label='Количество звезд' value='1 329' icon={<IconStar />} />
+          <CardStats label='Количество форков' value='234' icon={<IconFork />} />
+          <CardStats label='В архиве' value='Нет' icon={<IconArchive />} />
+          <CardStats label='Язык' value='Python' icon={<IconTerminal />} />
+          <CardStats label='Cоздано' value='16.12.2017' icon={<IconFolder />} />
+          <CardStats label='Изменено' value='19.12.2023' icon={<IconCreate />} />
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   );
 };
 
