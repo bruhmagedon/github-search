@@ -1,174 +1,214 @@
+/*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
+
+/*
+Document
+========
+*/
+
 /**
-  Нормализация блочной модели
- */
+Use a better box model (opinionated).
+*/
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /**
-   Убираем внутренние отступы слева тегам списков,
-   у которых есть атрибут class
-  */
-:where(ul, ol):where([class]) {
-  padding-left: 0;
+1. Improve consistency of default fonts in all browsers.
+2. Correct the line height in all browsers.
+3. Prevent adjustments of font size after orientation changes in iOS.
+4. Use a more readable tab size (opinionated).
+*/
+
+html {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji';
+  line-height: 1.15; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+  tab-size: 4; /* 4 */
 }
 
+/*
+Sections
+========
+*/
+
 /**
-   Убираем внешние отступы body и двум другим тегам,
-   у которых есть атрибут class
-  */
-body,
-:where(blockquote, figure):where([class]) {
+Remove the margin in all browsers.
+*/
+
+body {
   margin: 0;
 }
 
+/*
+Text-level semantics
+====================
+*/
+
 /**
-   Убираем внешние отступы вертикали нужным тегам,
-   у которых есть атрибут class
-  */
-:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
-  margin-block: 0;
+Add the correct font weight in Chrome and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
 }
 
-:where(dd[class]) {
-  margin-left: 0;
+/**
+1. Improve consistency of default
+fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
-:where(fieldset[class]) {
-  margin-left: 0;
+/**
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+
+/**
+Correct table border color
+inheritance in Chrome and Safari.
+(https://issues.chromium.org/issues/40615503, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+
+table {
+  border-color: currentcolor;
+}
+
+/*
+Forms
+=====
+*/
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+
+legend {
   padding: 0;
-  border: none;
 }
 
 /**
-   Убираем стандартный маркер маркированному списку,
-   у которого есть атрибут class
-  */
-:where(ul[class]) {
-  list-style: none;
-}
+Add the correct vertical alignment in Chrome and Firefox.
+*/
 
-:where(address[class]) {
-  font-style: normal;
+progress {
+  vertical-align: baseline;
 }
 
 /**
-   Обнуляем вертикальные внешние отступы параграфа,
-   объявляем локальную переменную для внешнего отступа вниз,
-   чтобы избежать взаимодействие с более сложным селектором
-  */
-p {
-  --paragraphMarginBottom: 24px;
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
 
-  margin-block: 0;
-}
-
-/**
-   Внешний отступ вниз для параграфа без атрибута class,
-   который расположен не последним среди своих соседних элементов
-  */
-p:where(:not([class]):not(:last-child)) {
-  margin-bottom: var(--paragraphMarginBottom);
-}
-
-/**
-   Упрощаем работу с изображениями и видео
-  */
-img,
-video {
-  display: block;
-  max-width: 100%;
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
-   Наследуем свойства шрифт для полей ввода
-  */
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
 
-html {
-  /**
-     Пригодится в большинстве ситуаций
-     (когда, например, нужно будет "прижать" футер к низу сайта)
-    */
-  height: 100%;
-  /**
-     Убираем скачок интерфейса по горизонтали
-     при появлении / исчезновении скроллбара
-    */
-  scrollbar-gutter: stable;
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
-   Плавный скролл
-  */
-html,
-:has(:target) {
-  scroll-behavior: smooth;
-}
+Remove the inner padding in Chrome and Safari on macOS.
+*/
 
-body {
-  /**
-     Пригодится в большинстве ситуаций
-     (когда, например, нужно будет "прижать" футер к низу сайта)
-    */
-  min-height: 100%;
-  /**
-     Унифицированный интерлиньяж
-    */
-  line-height: 1.5;
+::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 /**
-   Нормализация высоты элемента ссылки при его инспектировании в DevTools
-  */
-a:where([class]) {
-  display: inline-flex;
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
-/**
-   Курсор-рука при наведении на элемент
-  */
-button,
-label {
-  cursor: pointer;
-}
+/*
+Interactive
+===========
+*/
 
-/**
-   Приводим к единому цвету svg-элементы
-  */
-[fill] {
-  fill: currentColor;
-}
-[stroke] {
-  stroke: currentColor;
-}
+/*
+Add the correct display in Chrome and Safari.
+*/
 
-/**
-   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
-  */
-svg * {
-  transition-property: fill, stroke;
-}
-
-/**
-   Удаляем все анимации и переходы для людей,
-   которые предпочитают их не использовать
-  */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+summary {
+  display: list-item;
 }
