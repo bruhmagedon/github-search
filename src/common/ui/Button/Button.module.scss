@@ -4,8 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: rem(12);
+  border-radius: rem(8);
   border-style: none;
+  font-weight: 600;
 }
 
 .clear {
@@ -25,12 +26,30 @@
   }
 }
 
-.square {
+.square.size_m {
   padding: 0;
   width: rem(32);
   height: rem(32);
 }
 
+.square.size_l {
+  padding: 0;
+  width: rem(40);
+  height: rem(40);
+  svg {
+    height: rem(25);
+    width: rem(25);
+  }
+}
+
 .disabled {
   opacity: 0.5;
+}
+
+.size_m {
+  height: rem(32);
+}
+
+.size_l {
+  height: rem(40);
 }
