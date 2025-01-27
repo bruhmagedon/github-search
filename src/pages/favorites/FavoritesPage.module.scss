@@ -1,0 +1,15 @@
+.favorites {
+  &Page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &Wrapper {
+    background-color: var(--color-background);
+  }
+  &Title {
+    font-size: 28px;
+    line-height: 115%;
+    color: var(--color-foreground-secondary);
+  }
+}

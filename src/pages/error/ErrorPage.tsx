@@ -1,4 +1,4 @@
-import { classNames } from '@shared/utilities';
+import { classNames } from '@common/utilities';
 
 import cls from './ErrorPage.module.scss';
 

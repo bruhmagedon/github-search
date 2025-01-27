@@ -1,0 +1,35 @@
+.header {
+  height: var(--header-width);
+  border: var(--border);
+  background-color: var(--color-foreground);
+  padding-top: rem(16);
+  padding-bottom: rem(16);
+
+  &Container {
+    margin: 0 auto;
+    height: 100%;
+    width: var(--container-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.appLogo {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+
+  &Icon {
+    fill: var(--color-primary);
+    width: rem(18);
+    height: rem(18);
+  }
+
+  &Text {
+    color: var(--color-primary);
+    line-height: 130%;
+    font-size: re;
+    font-weight: 700;
+  }
+}

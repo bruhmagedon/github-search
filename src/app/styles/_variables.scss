@@ -3,22 +3,23 @@
 :root {
   // Цвета
   --color-background: #ededed;
-  --color-background-secondary: #ffffff;
   --color-foreground: #3a3a3a;
   --color-foreground-secondary: #101828;
   --color-foreground-muted: #84868c;
+  --color-primary: #ffffff;
   --color-card: #f7f7f7;
+  --color-card-secondary: #f1f5f9;
   --color-red: #d44333;
   --color-blue: #1e89f0;
-
-  --border: #{rem(1)} solid var(--color-dark-15);
+  --color-border: #888;
 
   --shadow: 0 0 0 #{rem(3)} #191919;
 
   // Шрифт
   --font-family-sans: 'Noto Sans', serif;
 
-  --container-width: #{rem(1600)};
+  --container-width: #{rem(1200)};
+  --header-width: #{rem(72)};
   --container-padding-x: #{rem(16)};
 
   --transition-duration: 0.2s;

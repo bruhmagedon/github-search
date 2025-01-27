@@ -1,0 +1,34 @@
+.search {
+  &Page {
+    height: 100%;
+    padding: rem(48) 0;
+    position: relative;
+  }
+
+  &InputContainer {
+    margin-bottom: rem(48);
+    position: sticky;
+    top: 0;
+  }
+
+  &Sorting {
+    &Container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: rem(24);
+    }
+    &Result {
+      font-weight: 600;
+      font-size: rem(22);
+      line-height: 100%;
+      color: var(--color-foreground-secondary);
+    }
+  }
+
+  &CardContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(24);
+  }
+}

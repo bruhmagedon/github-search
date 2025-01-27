@@ -1,0 +1,76 @@
+.select {
+  position: relative;
+  width: rem(286);
+  cursor: pointer;
+  outline: none;
+
+  .selected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(12) rem(20);
+    border: 2px solid var(--color-primary);
+    border-radius: rem(12);
+    background-color: var(--color-primary);
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      border-color: var(--color-border);
+    }
+
+    .arrow {
+      font-size: rem(12);
+      color: #666;
+    }
+  }
+
+  &.focused {
+    .selected {
+      border-color: var(--color-blue);
+    }
+  }
+
+  &Dropdown {
+    position: absolute;
+    padding: rem(6);
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: rem(5);
+    border: rem(1) solid #ccc;
+    border-radius: rem(12);
+    background-color: var(--color-primary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    animation: fadeIn 0.3s ease;
+
+    &Item {
+      padding: rem(10);
+      border-radius: rem(6);
+      transition: background-color 0.3s ease;
+      margin-bottom: rem(2);
+
+      &:hover {
+        background-color: var(--color-card-secondary);
+      }
+
+      &[data-selected='true'] {
+        background-color: var(--color-blue);
+        color: var(--color-primary);
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(rem(-10));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
