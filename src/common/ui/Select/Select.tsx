@@ -1,4 +1,4 @@
-import IconArrowDown from '@assets/ArrowDown.svg?react';
+import IconArrowDown from '@assets/icon/ArrowDown.svg?react';
 import { classNames } from '@common/utilities';
 import { useEffect, useRef, useState } from 'react';
 
