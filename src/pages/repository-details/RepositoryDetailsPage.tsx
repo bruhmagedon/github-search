@@ -3,7 +3,7 @@ import { Loader, NotFoundTypography, PreviousPageButton } from '@common/ui';
 import { classNames } from '@common/utilities';
 import { observer } from 'mobx-react-lite';
 
-import { RepositoryCard } from './components/RepositoryCard/RepositoryCard';
+import { RepositoryProfileCard } from './components/RepositoryCard/RepositoryProfileCard';
 
 import cls from './RepositoryDetailsPage.module.scss';
 
@@ -17,7 +17,7 @@ const RepositoryDetailsPage = observer(() => {
         <Loader />
       ) : (
         <>
-          {data && <RepositoryCard repository={data} />}
+          {data && <RepositoryProfileCard repository={data} />}
           {!data && <NotFoundTypography text='Репозиторий не найден' />}
         </>
       )}
