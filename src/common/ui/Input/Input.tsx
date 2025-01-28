@@ -1,10 +1,8 @@
-import type { InputHTMLAttributes } from 'react';
-
 import { classNames } from '@common/utilities';
 
 import cls from './Input.module.scss';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends React.ComponentProps<'input'> {
   className?: string;
   value: string;
 }
