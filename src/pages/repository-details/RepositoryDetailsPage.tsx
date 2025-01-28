@@ -1,4 +1,4 @@
-import { useRepository } from '@common/hooks/useRepository/useRepository';
+import { useRepository } from '@common/hooks';
 import { Loader, NotFoundTypography, PreviousPageButton } from '@common/ui';
 import { classNames } from '@common/utilities';
 import { observer } from 'mobx-react-lite';
