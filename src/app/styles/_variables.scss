@@ -15,14 +15,9 @@
 
   --shadow: 0 0 0 #{rem(3)} #191919;
 
-  // Шрифт
   --font-family-sans: 'Noto Sans', serif;
 
-  --container-width: #{rem(1200)};
+  --container-width: #{rem(1280)};
   --header-width: #{rem(72)};
   --container-padding-x: #{rem(16)};
-
-  --transition-duration: 0.2s;
-
-  --100vw: calc(100vw - var(--scrollbar-width));
 }
