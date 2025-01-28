@@ -1,0 +1,15 @@
+//TODO: временно заменил 1fr, потом изменить это, проверив размеры
+.repositoryList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: rem(24);
+
+  &Clear {
+    flex: 1 1 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}

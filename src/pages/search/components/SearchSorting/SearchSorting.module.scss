@@ -1,0 +1,14 @@
+.sorting {
+  &Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: rem(24);
+  }
+  &Result {
+    font-weight: 600;
+    font-size: rem(22);
+    line-height: 100%;
+    color: var(--color-foreground-secondary);
+  }
+}
