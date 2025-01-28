@@ -1,3 +1,4 @@
+import { Loader, LoaderSize } from '@common/ui';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -7,11 +8,11 @@ import cls from './BaseLayout.module.scss';
 
 export function BaseLayout() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className={cls.loaderWrapper}><Loader size={LoaderSize.L} /></div>}>
       <Header />
-      <div className={cls.layoutContainer}>
+      <main className={cls.layoutContainer}>
         <Outlet />
-      </div>
+      </main>
     </Suspense>
   );
 }
