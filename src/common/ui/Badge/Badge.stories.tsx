@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import IconStar from '@assets/Star.svg?react';
+import IconStar from '@assets/icon/Star.svg?react';
 
 import { Badge } from './Badge';
 
