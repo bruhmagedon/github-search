@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite';
 import cls from './RepositoryList.module.scss';
 
 export const RepositoryList = observer(() => {
-  const { repositoriesState: { data, isLoading, error } } = rootStore.repositoryStore;
+  const { repositoriesState: { data, isLoading } } = rootStore.repositoryStore;
 
   if (!data?.length && !isLoading) {
     return <div className={cls.repositoryListClear}>Репозитории не найдены</div>;
@@ -13,7 +13,6 @@ export const RepositoryList = observer(() => {
 
   return (
     <div className={cls.repositoryList}>
-      {error}
       {isLoading ? (Array.from({ length: 12 }).map((_, index) => <Skeleton key={`Skeleton_${index}`} />)) :
         data?.map((repo) => (
           <RepositoryCard key={`RepoCard_${repo.id}`} item={repo} />
