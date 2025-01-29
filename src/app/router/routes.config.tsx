@@ -6,7 +6,7 @@ export const routesConfig = {
   index: {
     index: true,
     element: <SearchPage />
-  } satisfies RouteObject,
+} satisfies RouteObject,
 
   donate: {
     path: '/favorites',
