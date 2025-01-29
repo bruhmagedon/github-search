@@ -14,6 +14,7 @@ interface ToggleFavoriteButtonProps {
   size?: ButtonSize;
 }
 
+// Кнопка для переключения состояния: избранный у репозитория
 export const ToggleFavoriteButton = observer(({
   repository,
   size = ButtonSize.M

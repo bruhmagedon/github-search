@@ -17,6 +17,7 @@ export const Select = ({ className, data, onChange }: SelectProps) => {
   const selectRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Реализация хука useClickOutside в useEffect для закрытия Select при клике вне его
     const handleClickOutside = (event: MouseEvent) => {
       if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -36,6 +37,8 @@ export const Select = ({ className, data, onChange }: SelectProps) => {
     }
   };
 
+  // Использовал div вместо select и options для кастомизации стилей
+  // По этой причине сделана поддержка focus через ref
   return (
     <div
       ref={selectRef}

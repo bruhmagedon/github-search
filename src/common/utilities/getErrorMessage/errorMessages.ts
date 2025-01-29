@@ -1,5 +1,6 @@
 import type { ErrorMessages } from '@common/types/Error';
 
+// Маппинг ошибок API на пользовательский френдли вид
 export const errorMessages: ErrorMessages = {
   'Repository': {
     400: 'Некорректный запрос. Проверьте правильность введенных данных.',

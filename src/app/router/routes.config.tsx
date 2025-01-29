@@ -2,6 +2,7 @@ import type { RouteObject } from 'react-router-dom';
 
 import { FavoritesPage, RepositoryDetailsPage, SearchPage } from '@pages/index';
 
+// Конфиг роутов
 export const routesConfig = {
   index: {
     index: true,

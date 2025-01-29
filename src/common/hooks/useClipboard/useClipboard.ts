@@ -1,6 +1,7 @@
 import clipboardCopy from 'clipboard-copy';
 import { toast } from 'sonner';
 
+// Хук для копирования ссылки
 export const useClipboard = () => {
   const onCopyLink = async (url: string) => {
     try {

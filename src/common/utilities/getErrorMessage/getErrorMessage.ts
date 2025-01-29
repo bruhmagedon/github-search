@@ -2,6 +2,7 @@ import type { ErrorResponse, ErrorType } from '@common/types/Error';
 
 import { errorMessages } from './errorMessages';
 
+// Кастомный логгер ошибок, ошибки парсятся и приводятся в юзер-френдли вид, затем используются, например в Toast
 export function getErrorMessage(
   type: ErrorType,
   error: ErrorResponse

@@ -45,7 +45,6 @@ export const PreselectedOption: Story = {
     data: ['First', 'Second', 'Third']
   },
   play: ({ args, canvasElement }) => {
-    // Имитация выбора первого элемента для предварительного выбора
     const select = canvasElement.querySelector('[role="select"]');
     if (select) {
       args.onChange?.(args.data[0]);

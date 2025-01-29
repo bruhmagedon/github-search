@@ -1,5 +1,4 @@
 import { RouterProvider } from '@app/router/RouterProvider';
-import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Toaster } from 'sonner';
 

@@ -1,3 +1,4 @@
+// Конфиг для типов сортировки под разные страницы
 export const searchSortVariants: Record<string, string> = {
   'Сначала новые': '',
   'Последнее обновление': 'updated/desc',

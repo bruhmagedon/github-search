@@ -12,6 +12,7 @@ interface RepositoryListWidgetProps {
   skeletonCount?: number;
 }
 
+// Базовый виджет для списка репозиториев. Можно использоваться на разных страницах, кастомизируется через props
 export const RepositoryListWidget = ({
   items,
   isLoading = false,

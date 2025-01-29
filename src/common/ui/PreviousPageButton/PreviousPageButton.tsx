@@ -10,6 +10,7 @@ interface PreviousPageButtonProps {
   className?: string;
 }
 
+// Кнопка для возврата на предыдущую страницу
 export const PreviousPageButton = ({ className }: PreviousPageButtonProps) => {
   const navigate = useNavigate();
 

@@ -8,6 +8,7 @@ import IconStar from '@assets/icon/Star.svg?react';
 import IconTerminal from '@assets/icon/Terminal.svg?react';
 import { formatDate, formatLanguage } from '@common/utilities';
 
+// Конфигурация для карточек со статистикой репозитория
 export const createRepositoryStatsConfig = (repository: IRepository) => {
   return [
     {

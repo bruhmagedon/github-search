@@ -6,6 +6,7 @@ import { Header } from './Header/Header';
 
 import cls from './BaseLayout.module.scss';
 
+// Suspense для ленивой подгрузки компонентов
 export function BaseLayout() {
   return (
     <Suspense fallback={<div className={cls.loaderWrapper}><Loader size={LoaderSize.L} /></div>}>

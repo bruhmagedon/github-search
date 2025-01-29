@@ -11,6 +11,7 @@ interface SortingWidgetProps {
   onSortChange: (selected: string) => void;
 }
 
+// Базовый виджет для панели сортировки репозиториев. Можно использоваться на разных страницах, кастомизируется через props
 export const SortingWidget = ({
   title,
   count,

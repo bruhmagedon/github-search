@@ -1,5 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
+// Стор для управления состояниями при работе с API (загрузка, успешно, ошибка).
+// Идею взял из redux-thunk
 class RequestState<T> {
   isLoading: boolean = false;
   error: string | null = null;

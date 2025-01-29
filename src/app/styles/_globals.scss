@@ -7,7 +7,6 @@ html {
 }
 
 body {
-  // @include fluid-text(18, 14);
   min-height: 100vh;
   font-family: var(--font-family-sans);
   color: var(--color-foreground);
@@ -18,7 +17,6 @@ main {
   flex-grow: 1;
 }
 
-// TODO: Переопределить цвет
 h1,
 h2,
 h3,

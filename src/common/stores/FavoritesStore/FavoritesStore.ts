@@ -3,6 +3,7 @@ import type { IRepository } from '@common/types/Repository';
 import { makeAutoObservable, reaction } from 'mobx';
 import { toast } from 'sonner';
 
+// Стор для работы с избранными репозиториями (хранение избранных репозиториев, подругрузка из из localStorage, сортировка)
 class FavoritesStore {
   favorites: IRepository[] = [];
   sortType: string = '';

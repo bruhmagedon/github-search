@@ -9,6 +9,7 @@ import { toast } from 'sonner';
 
 import RequestState from '../RequestState/RequestState';
 
+// Стор для репозиториев, которые приходят с API (поиск, сортировка, хранение результатов)
 class RepositoryStore {
   repositoriesState = new RequestState<IRepository[]>([]);
   currentRepositoryState = new RequestState<IRepository>(null);
@@ -17,6 +18,7 @@ class RepositoryStore {
 
   constructor() {
     makeAutoObservable(this);
+    // Троттлинг результатов с задержкой в 0.5 сек
     this.getRepositories = throttle(this.getRepositories, 500);
   }
 
@@ -30,11 +32,13 @@ class RepositoryStore {
     this.getRepositories();
   };
 
+  // Использовал flow на генераторах для уменьшения ре-рендров из-за observable объектов
   getRepositories = flow(function* (this: RepositoryStore) {
     if (!this.query) {
       this.repositoriesState.fulfilled([]);
       return;
     }
+    // Начало загрузки
     this.repositoriesState.pending();
     try {
       const fetchRepositories = yield api.get<RepositoryResponse>(`/search/repositories`, {
@@ -44,12 +48,14 @@ class RepositoryStore {
           order: this.sortType.split('/')[1]
         }
       });
+      // Получили данные
       this.repositoriesState.fulfilled(fetchRepositories.data.items);
     } catch (error) {
       if (error instanceof Error) {
         const { description } = getErrorMessage('Search', error as ErrorResponse);
         toast.error('Ошибка получения репозитория', { description });
-        this.currentRepositoryState.rejected(description);
+        // Не получили данные
+        this.repositoriesState.rejected(description);
       }
     }
   });
