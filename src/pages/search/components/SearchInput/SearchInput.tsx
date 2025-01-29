@@ -11,7 +11,7 @@ export const SearchInput = observer(() => {
       <Input
         value={repositoryStore.query}
         onChange={(event) => repositoryStore.setQuery(event.currentTarget.value)}
-        placeholder='Search'
+        placeholder='Поиск репозиториев'
       />
     </div>
   );

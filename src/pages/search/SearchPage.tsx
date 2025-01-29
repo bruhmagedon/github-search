@@ -1,6 +1,6 @@
-import { RepositoryList } from './components/RepositoryList/RepositoryList';
 import { SearchInput } from './components/SearchInput/SearchInput';
-import { SearchSorting } from './components/SearchSorting/SearchSorting';
+import { SearchRepositoryListContainer } from './components/SearchRepositoryListContainer/SearchRepositoryListContainer';
+import { SearchSortingContainer } from './components/SearchSortingContainer/SearchSortingContainer';
 
 import cls from './SearchPage.module.scss';
 
@@ -8,8 +8,8 @@ const SearchPage = () => {
   return (
     <div className={cls.searchPage}>
       <SearchInput />
-      <SearchSorting />
-      <RepositoryList />
+      <SearchSortingContainer />
+      <SearchRepositoryListContainer />
     </div>
   );
 };
