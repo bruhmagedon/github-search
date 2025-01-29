@@ -1,15 +1,7 @@
-.favorites {
-  &Page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &Wrapper {
-    background-color: var(--color-background);
-  }
-  &Title {
-    font-size: 28px;
-    line-height: 115%;
-    color: var(--color-foreground-secondary);
-  }
+.favoritesPage {
+  padding: rem(60) 0;
+  position: relative;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
 }
