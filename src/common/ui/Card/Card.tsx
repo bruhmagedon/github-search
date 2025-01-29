@@ -3,13 +3,14 @@ import type { IRepository } from '@common/types/Repository';
 import IconFork from '@assets/icon/Fork.svg?react';
 import IconLink from '@assets/icon/Link.svg?react';
 import IconStar from '@assets/icon/Star.svg?react';
+import { useClipboard } from '@common/hooks';
 import { classNames } from '@common/utilities';
 import { observer } from 'mobx-react-lite';
-import { useNavigate } from 'react-router-dom';
 
+import { AppLink, AppLinkTheme } from '../AppLink/AppLink';
 import { Avatar } from '../Avatar/Avatar';
 import { Badge } from '../Badge/Badge';
-import { Button, ButtonTheme } from '../Button/Button';
+import { Button } from '../Button/Button';
 import { ToggleFavoriteButton } from '../ToggleFavoriteButton/ToggleFavoriteButton';
 
 import cls from './Card.module.scss';
@@ -20,11 +21,7 @@ interface CardProps {
 }
 
 export const Card = observer(({ className, item }: CardProps) => {
-  const navigate = useNavigate();
-
-  const onRedirect = () => {
-    navigate(`/repository/${item.owner.login}/${item.name}`);
-  };
+  const { onCopyLink } = useClipboard();
 
   return (
     <article className={classNames(cls.card, {}, [className])}>
@@ -50,9 +47,13 @@ export const Card = observer(({ className, item }: CardProps) => {
       <footer className={cls.cardFooter}>
         <div className={cls.cardFooterButtons}>
           <ToggleFavoriteButton repository={item} />
-          <Button square><IconLink /></Button>
+          <Button square onClick={() => onCopyLink(item.html_url)}>
+            <IconLink />
+          </Button>
         </div>
-        <Button theme={ButtonTheme.RED} onClick={onRedirect}>Подробнее</Button>
+        <AppLink theme={AppLinkTheme.BUTTON_RED} to={`/repository/${item.owner.login}/${item.name}`}>
+          Подробнее
+        </AppLink>
       </footer>
     </article>
   );
