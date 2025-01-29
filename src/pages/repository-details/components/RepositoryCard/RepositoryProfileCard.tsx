@@ -1,7 +1,17 @@
 import type { IRepository } from '@common/types/Repository';
 
 import IconLink from '@assets/icon/Link.svg?react';
-import { Avatar, Button, ButtonSize, ButtonTheme, RepositoryStats, ToggleFavoriteButton } from '@common/ui';
+import { useClipboard } from '@common/hooks';
+import {
+  AppLink,
+  AppLinkSize,
+  AppLinkTheme,
+  Avatar,
+  Button,
+  ButtonSize,
+  RepositoryStats,
+  ToggleFavoriteButton
+} from '@common/ui';
 import { classNames } from '@common/utilities';
 import { useMemo } from 'react';
 
@@ -15,6 +25,7 @@ interface RepositoryProfileCardProps {
 }
 
 export const RepositoryProfileCard = ({ className, repository }: RepositoryProfileCardProps) => {
+  const { onCopyLink } = useClipboard();
   const statsConfig = useMemo(() => createRepositoryStatsConfig(repository), [repository]);
 
   return (
@@ -36,14 +47,14 @@ export const RepositoryProfileCard = ({ className, repository }: RepositoryProfi
       <footer className={cls.cardFooter}>
         <div className={cls.cardFooterButtons} role='group'>
           <ToggleFavoriteButton size={ButtonSize.L} repository={repository} />
-          {/* TODO: В будущем заменится на компонент с копированием ссылки */}
-          <Button square size={ButtonSize.L}>
+          <Button square size={ButtonSize.L} onClick={() => onCopyLink(repository.html_url)}>
             <IconLink className={cls.cardButtonsIcon} />
           </Button>
         </div>
-        <Button size={ButtonSize.L} theme={ButtonTheme.RED}>
-          <a href={repository.html_url} target='_blank'>Открыть репозиторий</a>
-        </Button>
+        <AppLink size={AppLinkSize.L} target='_blank' theme={AppLinkTheme.BUTTON_RED} to={repository.html_url}>
+          Открыть репозиторий
+        </AppLink>
+
       </footer>
     </article>
   );
