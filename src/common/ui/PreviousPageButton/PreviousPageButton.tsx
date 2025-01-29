@@ -18,7 +18,7 @@ export const PreviousPageButton = ({ className }: PreviousPageButtonProps) => {
       <Button onClick={() => navigate(-1)}>
         <div className={cls.content}>
           <IconArrowLeft />
-          <span>Back</span>
+          <span>Назад</span>
         </div>
       </Button>
     </div>
