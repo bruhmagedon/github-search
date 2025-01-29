@@ -1,9 +1,11 @@
+export { AppLink, AppLinkSize, AppLinkTheme } from './AppLink/AppLink';
 export { Avatar } from './Avatar/Avatar';
 export { Badge } from './Badge/Badge';
 export { Button, ButtonSize, ButtonTheme } from './Button/Button';
 export { Card } from './Card/Card';
 export { Input } from './Input/Input';
 export { Loader, LoaderSize } from './Loader/Loader';
+export { LoaderWrapper } from './LoaderWrapper/LoaderWrapper';
 export { NotFoundTypography } from './NotFoundTypography/NotFoundTypography';
 export { PreviousPageButton } from './PreviousPageButton/PreviousPageButton';
 export { RepositoryStats } from './RepositoryStats/RepositoryStats';
