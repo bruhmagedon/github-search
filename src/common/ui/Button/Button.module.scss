@@ -26,6 +26,17 @@
   }
 }
 
+.header {
+  background-color: #8b8b8b;
+  padding: 0px;
+  border: 4px solid #4a4a4a;
+  border-radius: rem(12);
+}
+
+.ghost {
+  background-color: transparent;
+}
+
 .square.size_m {
   padding: 0;
   width: rem(32);

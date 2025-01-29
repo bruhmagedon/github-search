@@ -7,7 +7,9 @@ import cls from './Button.module.scss';
 
 export enum ButtonTheme {
   CLEAR = 'clear',
-  RED = 'red'
+  RED = 'red',
+  GHOST = 'ghost',
+  HEADER = 'header'
 }
 
 export enum ButtonSize {
@@ -15,7 +17,7 @@ export enum ButtonSize {
   L = 'size_l'
 }
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ComponentProps<'button'> {
   className?: string;
   disabled?: boolean;
   size?: ButtonSize;
@@ -29,6 +31,7 @@ export const Button = (props: ButtonProps) => {
     children,
     theme = ButtonTheme.CLEAR,
     size = ButtonSize.M,
+    type = 'button',
     square,
     disabled,
     ...otherProps
@@ -45,7 +48,7 @@ export const Button = (props: ButtonProps) => {
     <button
       className={classNames(cls.Button, mods, [className])}
       disabled={disabled}
-      type='button'
+      type={type}
       {...otherProps}
     >
       {children}

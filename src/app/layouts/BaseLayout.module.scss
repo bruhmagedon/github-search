@@ -1,5 +1,22 @@
+.loaderWrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .layoutContainer {
   margin: 0 auto;
   min-height: calc(100vh - var(--header-width));
-  width: var(--container-width);
+  max-width: var(--container-width);
+  padding: 0 rem(40);
+  display: flex;
+  flex-direction: column;
+   @media (max-width: 768px) {
+    padding: 0 rem(20);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 rem(10);
+  }
 }

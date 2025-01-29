@@ -14,7 +14,8 @@
     "paths": {
       "@app/*": ["./src/app/*"],
       "@pages/*": ["./src/pages/*"],
-      "@assets/*": ["./src/app/assets/*"],
+      "@widgets/*": ["./src/widgets/*"],
+      "@assets/icon/*": ["./src/app/assets/*"],
       "@common/*": ["./src/common/*"],
       "@hooks/*": ["./src/common/hooks/*"],
       "@ui/*": ["./src/common/ui/*"],
