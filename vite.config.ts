@@ -28,6 +28,7 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@app': path.resolve(__dirname, './src/app'),
         '@pages': path.resolve(__dirname, './src/pages'),
+        '@widgets': path.resolve(__dirname, './src/widgets'),
         '@assets': path.resolve(__dirname, './src/app/assets'),
         '@common': path.resolve(__dirname, './src/common'),
         '@hooks': path.resolve(__dirname, './src/common/hooks'),
