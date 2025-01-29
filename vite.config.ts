@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
       cors: true,
-      open: true
+      open: false
     },
     preview: {
       port: 3000
@@ -29,9 +29,18 @@ export default defineConfig(({ mode }) => {
         '@app': path.resolve(__dirname, './src/app'),
         '@pages': path.resolve(__dirname, './src/pages'),
         '@widgets': path.resolve(__dirname, './src/widgets'),
-        '@shared': path.resolve(__dirname, './src/shared'),
-        '@hooks': path.resolve(__dirname, './src/shared/hooks'),
-        '@ui': path.resolve(__dirname, './src/shared/ui')
+        '@assets': path.resolve(__dirname, './src/app/assets'),
+        '@common': path.resolve(__dirname, './src/common'),
+        '@hooks': path.resolve(__dirname, './src/common/hooks'),
+        '@ui': path.resolve(__dirname, './src/common/ui'),
+        '@styles': path.resolve(__dirname, './src/app/styles')
+      }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@styles/helpers/functions" as *;`
+        }
       }
     }
   };

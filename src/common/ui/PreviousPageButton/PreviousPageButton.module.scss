@@ -1,0 +1,17 @@
+.PreviousPageButton {
+  position: absolute;
+  top: rem(24);
+  left: rem(0);
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: rem(4);
+  }
+  button {
+    border-width: 0px;
+  }
+  span {
+    font-weight: 400;
+  }
+}

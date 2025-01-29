@@ -15,9 +15,11 @@
       "@app/*": ["./src/app/*"],
       "@pages/*": ["./src/pages/*"],
       "@widgets/*": ["./src/widgets/*"],
-      "@shared/*": ["./src/shared/*"],
-      "@hooks/*": ["./src/shared/hooks/*"],
-      "@ui/*": ["./src/shared/ui/*"]
+      "@assets/icon/*": ["./src/app/assets/*"],
+      "@common/*": ["./src/common/*"],
+      "@hooks/*": ["./src/common/hooks/*"],
+      "@ui/*": ["./src/common/ui/*"],
+      "@styles/*": ["./src/app/styles/*"]
     },
     "allowImportingTsExtensions": true,
     "allowJs": true,
