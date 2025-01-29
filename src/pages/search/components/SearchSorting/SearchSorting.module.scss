@@ -4,11 +4,26 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: rem(24);
-  }
-  &Result {
     font-weight: 600;
     font-size: rem(22);
     line-height: 100%;
     color: var(--color-foreground-secondary);
+  }
+  &Text {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+    &Skeleton {
+      width: rem(200);
+      height: rem(40);
+    }
+  }
+  &Select {
+    font-size: rem(16);
+    font-weight: 400;
+    &Skeleton {
+      width: rem(260);
+      height: rem(40);
+    }
   }
 }
